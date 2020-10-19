@@ -1,0 +1,38 @@
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1603087824.013521,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-fernandochew-environment-mytest-dxl4c-d76np[0m
+{"level":"info","ts":1603087833.2367535,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/************/environment-mytestproject-production.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1603087833.2368457,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1603087833.3784554,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:316dfe7113af97a22a231385ff3eef9920408b28
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /tekton/home/git/credentials
+
+Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-apply[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-**-production
+lock configmap **-lock-**-production created
+Ignoring templates/.gitignore
+Ignoring templates/wildcardcert-secret.yaml
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+cleaning the lock configmap **-lock-**-production
