@@ -1,26 +1,26 @@
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
-{"level":"info","ts":1603087824.013521,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1604302166.9608932,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-fernandochew-environment-mytest-dxl4c-d76np[0m
-{"level":"info","ts":1603087833.2367535,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/************/environment-mytestproject-production.git @ v0.0.1 in path /workspace/source"}
-{"level":"warn","ts":1603087833.2368457,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
-{"level":"info","ts":1603087833.3784554,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-fernandochew-environment-mytest-p87wr-tr7tc[0m
+{"level":"info","ts":1604302177.1740499,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/************/environment-mytestproject-production.git @ v0.0.2 in path /workspace/source"}
+{"level":"warn","ts":1604302177.1741679,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1604302177.214634,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
-Using SHAs from PULL_REFS=master:316dfe7113af97a22a231385ff3eef9920408b28
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:dad857d81eeaf68aa0f0d47ae77f27bcfc431fbe
 WARNING: no SHAs to merge, falling back to initial cloned commit
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
 Generated Git credentials file /tekton/home/git/credentials
 
-Showing logs for build [32mfernandochew-environment-mytest-dxl4c-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-apply[0m
+Showing logs for build [32mfernandochew-environment-mytest-p87wr-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-helm-apply[0m
 Modified file /workspace/source/env/Chart.yaml to set the chart to version 1
 creating the lock configmap **-lock-**-production
 lock configmap **-lock-**-production created
@@ -34,5 +34,15 @@ Successfully added Helm repository jenkins-x-chartmuseum.
 WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
 Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
 Successfully added Helm repository chartmuseum.jenkins-x.io.
-
 cleaning the lock configmap **-lock-**-production
+error: failed to build the dependencies of chart '/tmp/**-helm-apply-884144765/env': failed to run 'helm dependency build' command in directory '/tmp/**-helm-apply-884144765/env', output: 'Hang tight while we grab the latest from your chart repositories...
+...Unable to get an update from the "local" chart repository (http://127.0.0.1:8879/charts):
+	Get http://127.0.0.1:8879/charts/index.yaml: dial tcp 127.0.0.1:8879: connect: connection refused
+...Successfully got an update from the "jenkins-x-chartmuseum" chart repository
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "storage.googleapis.com" chart repository
+...Successfully got an update from the "chartmuseum.jenkins-x.io" chart repository
+Update Complete. ⎈Happy Helming!⎈
+Error: **-tutorial chart not found in repo http://jenkins-x-chartmuseum:8080'
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-helm-apply'. The execution of the pipeline has stopped.[0m
